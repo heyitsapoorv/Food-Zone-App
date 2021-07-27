@@ -4,81 +4,102 @@
 	<head>
 		<meta charset="utf-8">
         <title>Food Review Analysis</title>
-        <link rel="shortcut icon" href="{{ url_for('static', filename='icon1.ico') }}">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
-	<link href="static/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
-    <link href="static/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
-    <link href="static/templatemo-diagoona.css" rel="stylesheet" />
+        <link rel="shortcut icon" href="{{ url_for('static', filename='icon1.png') }}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
 
         
-     <!-- <div id="pageloader">   
-        <div class="loader">
-          <img src="images/progress.gif" alt='loader' />
-        </div>
-   </div> -->
-   
+     
 	</head>
 
 	<body>
+        <nav class="light-blue lighten-1" role="navigation">
+            <div class="nav-wrapper container"><img src="static/icon1.png" alt=""height="63" width="60"/>
 
-		<div class="tm-container">        
-            <div>
-                <div class="tm-row pt-4">
-                    <div class="tm-col-left">
-                        <div class="tm-site-header media">
-                            <div class="media-body">
-                                <h2 >Restaurant Review's Sentiment Analyser</h2>
-                                <p >A Machine Learning Web App, Built with Flask.</p>
-                            </div>        
-                        </div>
-                    </div>
-					<div class="tm-col-right">
-                        <nav class="navbar navbar-expand-lg" id="tm-main-nav">
-                            <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button" 
-                                data-toggle="collapse" data-target="#navbar-nav" 
-                                aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span><i class="fas fa-bars"></i></span>
-                            </button>
-                            <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
-                                <ul class="navbar-nav text-uppercase">
-                                    <li class="nav-item active">
-                                        <a class="nav-link tm-nav-link" href="{{ url_for('home')}}">Home <span class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link tm-nav-link" href="{{ url_for('about')}}">About</a>
-                                    </li>
-                                </ul>                            
-                            </div>                        
-                        </nav>
-                    </div>
-                </div>
+              <ul class="right hide-on-med-and-down">
+               
+             
+                <li >
+                    <a  href="{{ url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li >
+                    <a  href="{{ url_for('about')}}">About</a>
+                </li>
+              </ul>
+              <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </div>
+          </nav>
+
+          <div class="section no-pad-bot" id="index-banner">
+            <div class="container">
+                <h4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRestaurant Review's Sentiment Analyser</h4>
+              <div class="row center">
+                <h6 class="header col s12 light">A Machine Learning Web App, Built with Flask.
+                </h6>
+                <br>
+                </h5>
+              </div>
 		<!-- Result -->
-		<div class="tm-row">
-			<div class="tm-col-left"></div>
-			<main class="tm-col-right">
-				<section class="tm-content">
-						<!-- <div class="post-content"> -->
-			{% if prediction==1 %}
-				<h1 style="color:green;">Prediction: <span class='safe'>Good Work! POSITIVE Review.</span></h1>
+        <div class="row">
+
+            <div class="row">
+              <div class="input-field col s4">
+                {% if prediction==1 %}
+				<h5 style="color:green;">Prediction: <span class='safe'>Good Work! POSITIVE Review.</span></h5>
 			{% elif prediction==0 %}
-				<h1 style="color:red;">Prediction: <span class='danger'> NEGATIVE Review.</span></h1>
+				<h5 style="color:red;">Prediction: <span class='danger'> NEGATIVE Review.</span></h5>
 
 			{% endif %}
-		</section>
-	</main>
-</div>
-</div>
+                <br>
+                <br>
 
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
 
-<div class="tm-col-right tm-col-footer">
-	<footer class="tm-site-footer text-right">
-		<p class="mb-0">Made by Apoorv Upadhyay.
+            </div>
+          
+  <br>
+
+</div>
 		
-		| <a target="_blank" href="https://www.linkedin.com/in/apoorv-upadhyay-76805bbb/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a></p>
-	</footer>
-</div>   
-</div> 
+
+
+<footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Apoorv Upadhyay</h5>
+          <p class="grey-text text-lighten-4">This app can be used to check the sentiment of a restaurant's review moreover it can be further developed to be used to check the performance of a restaurant by displaying the percentage of positive and negaitve reviews.</p>
+
+
+        </div>
+        <div class="col l3 s12"></div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="https://www.linkedin.com/in/apoorv-upadhyay-76805bbb/">LinkedIn <i class="fab fa-linkedin fa-lg contact-icon"></i></a></li>
+            <li><a class="white-text" href="https://github.com/heyitsapoorv">Github &nbsp<i class="fa fa-github" aria-hidden="true"></i></a></li>
+            <li><a class="white-text" href="https://www.instagram.com/heyitsapoorv/">Instagram <i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp© Made by Apoorv Upadhyay
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
 	</body>
 </html>
