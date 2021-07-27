@@ -22,5 +22,9 @@ def predict():
     	my_prediction = classifier.predict(vect)
     	return render_template('result.html', prediction=my_prediction)
 
+@app.route('/about')
+def about():
+	return render_template('about.html')
+
 if __name__ == '__main__':
 	app.run(debug=True)
